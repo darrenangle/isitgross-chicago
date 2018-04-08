@@ -10,6 +10,7 @@ import { SearchQueryNotesComponent } from './components/search-query-notes/searc
 import { ResultsHeaderComponent } from './components/results-header/results-header.component';
 import { ResultsListComponent } from './components/results-list/results-list.component';
 import { InspectionDetailComponent } from './components/inspection-detail/inspection-detail.component';
+import { RouterModule } from './router/router.module';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { InspectionDetailComponent } from './components/inspection-detail/inspec
     InspectionDetailComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
