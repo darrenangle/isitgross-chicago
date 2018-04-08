@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-filters.component.scss']
 })
 export class SearchFiltersComponent implements OnInit {
-
+  private filterState = {
+    includePassingInspections: false,
+    includePoo: false,
+    includePests: false,
+    includePoisons: false,
+  };
   constructor() { }
 
   ngOnInit() {
+  }
+  toggleFilter(state: string) {
+    this.filterState[state] = !this.filterState[state];
+    console.log('toggling filter: ' + state);
   }
 
 }

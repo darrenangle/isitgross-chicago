@@ -1,0 +1,17 @@
+.search-filters {
+    display: inline-block;
+
+    &__filter {
+        display: inline-block;
+        cursor: pointer;
+
+        &--active {
+            color: red;
+        }
+
+        &__description {
+            margin-right: 20px;
+        }
+    }
+
+}

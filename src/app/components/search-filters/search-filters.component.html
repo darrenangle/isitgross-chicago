@@ -1,3 +1,26 @@
-<p>
-  search-filters works!
-</p>
+<div class="search-filters">
+  <!-- Passing Inspections Filter -->
+  <div class="search-filters__filter" 
+      (click)="toggleFilter('includePassingInspections')" 
+      [class.search-filters__filter--active]="filterState.includePassingInspections">
+    <p class="search-filters__filter__description">include passing inspections</p>
+  </div>
+  <!-- Poo Inspections Filter -->
+  <div class="search-filters__filter" 
+      (click)="toggleFilter('includePoo')" 
+      [class.search-filters__filter--active]="filterState.includePoo">
+      <p class="search-filters__filter__description">poo</p>
+  </div>
+  <!-- Pest Inspections Filter -->
+  <div class="search-filters__filter" 
+      (click)="toggleFilter('includePests')" 
+      [class.search-filters__filter--active]="filterState.includePests">
+      <p class="search-filters__filter__description">pests</p>
+  </div>
+   <!-- Poison Inspections Filter -->
+  <div class="search-filters__filter" 
+      (click)="toggleFilter('includePoisons')" 
+      [class.search-filters__filter--active]="filterState.includePoisons">
+      <p class="search-filters__filter__description">poison</p>
+  </div>
+</div>
