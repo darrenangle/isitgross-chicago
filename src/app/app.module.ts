@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { LoggingService } from './services/logging.service';
 import { QueryBuilderService } from './services/query-builder.service';
+import { InspectionDataService } from './services/inspection-data.service';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -32,7 +33,7 @@ import { FrontPageComponent } from './components/front-page/front-page.component
     BrowserModule,
     AppRouterModule
   ],
-  providers: [LoggingService, QueryBuilderService],
+  providers: [LoggingService, QueryBuilderService, InspectionDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
