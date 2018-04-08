@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoggingService } from './../../services/logging.service';
 
 @Component({
   selector: 'app-search-filters',
@@ -12,13 +13,13 @@ export class SearchFiltersComponent implements OnInit {
     includePests: false,
     includePoisons: false,
   };
-  constructor() { }
+  constructor(private log: LoggingService) { }
 
   ngOnInit() {
   }
   toggleFilter(state: string) {
     this.filterState[state] = !this.filterState[state];
-    console.log('toggling filter: ' + state);
+    this.log.logActivity('toggling filter: ' + state);
   }
 
 }
