@@ -28,7 +28,7 @@ export class QueryBuilderService {
   private currentQueryString = this.cleanAPIUrl + this.textQuery + this.whereFilter;
 
   updateTextQuery(text: string): void {
-    this.textQuery = text;
+    this.textQuery = encodeURI(text);
     this.buildQuery();
   }
 

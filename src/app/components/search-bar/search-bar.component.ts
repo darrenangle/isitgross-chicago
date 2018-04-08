@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { QueryBuilderService } from './../../services/query-builder.service';
+
 
 @Component({
   selector: 'app-search-bar',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private queryService: QueryBuilderService) { }
 
   ngOnInit() {
   }
