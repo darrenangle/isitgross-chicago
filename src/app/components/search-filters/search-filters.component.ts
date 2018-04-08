@@ -1,5 +1,7 @@
+
 import { Component, OnInit } from '@angular/core';
 import { LoggingService } from './../../services/logging.service';
+import { QueryBuilderService } from './../../services/query-builder.service';
 
 @Component({
   selector: 'app-search-filters',
@@ -7,19 +9,14 @@ import { LoggingService } from './../../services/logging.service';
   styleUrls: ['./search-filters.component.scss']
 })
 export class SearchFiltersComponent implements OnInit {
-  private filterState = {
-    includePassingInspections: false,
-    includePoo: false,
-    includePests: false,
-    includePoisons: false,
-  };
-  constructor(private log: LoggingService) { }
+
+  constructor(
+    private log: LoggingService,
+    private query: QueryBuilderService
+  ) { }
 
   ngOnInit() {
   }
-  toggleFilter(state: string) {
-    this.filterState[state] = !this.filterState[state];
-    this.log.logActivity('toggling filter: ' + state);
-  }
+
 
 }
