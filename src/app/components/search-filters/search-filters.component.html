@@ -1,26 +1,33 @@
+<p class='search-filter-instructions'>
+    Click to activate filter:
+</p>
 <div class="search-filters row">
   <!-- Passing Inspections Filter -->
   <div class="search-filters__filter col" 
       (click)="query.toggleFilter('includePassingInspections')" 
       [class.search-filters__filter--active]="query.queryFilterStates.includePassingInspections">
-    <p class="search-filters__filter__description">include passing inspections</p>
+    <p class="search-filters__filter__emoji">👍</p>    
+    <p class="search-filters__filter__description d-none d-sm-block">passed</p>
   </div>
   <!-- Poo Inspections Filter -->
   <div class="search-filters__filter col" 
       (click)="query.toggleFilter('includePoo')" 
       [class.search-filters__filter--active]="query.queryFilterStates.includePoo">
-      <p class="search-filters__filter__description">poo</p>
+      <p class="search-filters__filter__emoji">💩</p>    
+      <p class="search-filters__filter__description d-none d-sm-block">poo</p>
   </div>
   <!-- Pest Inspections Filter -->
   <div class="search-filters__filter col" 
       (click)="query.toggleFilter('includePests')" 
       [class.search-filters__filter--active]="query.queryFilterStates.includePests">
-      <p class="search-filters__filter__description">pests</p>
+      <p class="search-filters__filter__emoji">🐀</p>    
+      <p class="search-filters__filter__description d-none d-sm-block">pests</p>
   </div>
    <!-- Poison Inspections Filter -->
   <div class="search-filters__filter col" 
       (click)="query.toggleFilter('includePoisons')" 
       [class.search-filters__filter--active]="query.queryFilterStates.includePoisons">
-      <p class="search-filters__filter__description">poison</p>
+      <p class="search-filters__filter__emoji">☠️</p> 
+      <p class="search-filters__filter__description d-none d-sm-block">poison</p>
   </div>
 </div>
