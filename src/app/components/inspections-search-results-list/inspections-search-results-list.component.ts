@@ -11,13 +11,10 @@ import { ScrollToService, ScrollToConfigOptions } from '@nicky-lenaers/ngx-scrol
 export class InspectionsSearchResultsListComponent implements OnInit {
   inspections: Inspection[];
   constructor(
-    private inspectionDataService: InspectionDataService,
-    private _scrollToService: ScrollToService
+    private inspectionDataService: InspectionDataService
   ) { }
 
-  config: ScrollToConfigOptions = {
-    target: 'results'
-  };
+
 
   ngOnInit() {
       this
@@ -25,7 +22,6 @@ export class InspectionsSearchResultsListComponent implements OnInit {
         .inspectionData
         .subscribe((inspections: Inspection[]) => {
           this.inspections = inspections;
-          this._scrollToService.scrollTo(this.config);
         });
   }
 
