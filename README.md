@@ -1,6 +1,6 @@
 # Is It Gross: Chicago
 
-### [Demo: https://darrenangle.com/isitgross-chicago](http://darrenangle.com/isitgross-chicago)
+### [Demo: http://darrenangle.com/isitgross-chicago](http://darrenangle.com/isitgross-chicago)
 
 An Angular 5 app that allows users to search failed food inspections.
 
