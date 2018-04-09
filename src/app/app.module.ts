@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { LoggingService } from './services/logging.service';
 import { QueryBuilderService } from './services/query-builder.service';
 import { InspectionDataService } from './services/inspection-data.service';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -32,7 +33,8 @@ import { InspectionsSearchResultsListComponent } from './components/inspections-
   imports: [
     BrowserModule,
     AppRouterModule,
-    HttpClientModule
+    HttpClientModule,
+    ScrollToModule.forRoot()
   ],
   providers: [LoggingService, QueryBuilderService, InspectionDataService ],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InspectionDataService } from './../../services/inspection-data.service';
 import { Inspection } from '../../models/inspection';
+import { ScrollToService, ScrollToConfigOptions } from '@nicky-lenaers/ngx-scroll-to';
 
 @Component({
   selector: 'app-inspections-search-results-list',
@@ -9,7 +10,14 @@ import { Inspection } from '../../models/inspection';
 })
 export class InspectionsSearchResultsListComponent implements OnInit {
   inspections: Inspection[];
-  constructor(private inspectionDataService: InspectionDataService) { }
+  constructor(
+    private inspectionDataService: InspectionDataService,
+    private _scrollToService: ScrollToService
+  ) { }
+
+  config: ScrollToConfigOptions = {
+    target: 'results'
+  };
 
   ngOnInit() {
       this
@@ -17,6 +25,7 @@ export class InspectionsSearchResultsListComponent implements OnInit {
         .inspectionData
         .subscribe((inspections: Inspection[]) => {
           this.inspections = inspections;
+          this._scrollToService.scrollTo(this.config);
         });
   }
 
