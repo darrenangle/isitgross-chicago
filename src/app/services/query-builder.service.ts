@@ -6,6 +6,7 @@ export class QueryBuilderService {
   public cleanAPIUrl = 'https://data.cityofchicago.org/resource/cwig-ma7x.json?$q=';
   private textQuery = '';
   private resultLimit = '&$limit=100';
+  private order = '&$order=inspection_date DESC';
 
   private queryFilterStates = {
     includePassingInspections: false,
@@ -55,7 +56,7 @@ export class QueryBuilderService {
     newQuery += this.queryFilterStates.includePoisons ? this.queryFilterStrings.andIncludePoison : '';
 
     // Add limit to new query and finish build
-    this.currentQueryString = newQuery + this.resultLimit;
+    this.currentQueryString = newQuery + this.resultLimit + this.order;
     this.log.logActivity('Current Query: ' + this.currentQueryString );
   }
 
