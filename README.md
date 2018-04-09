@@ -25,6 +25,7 @@ ng serve
 This app follows a mostly typical Angular app structure, with folder seperation. 
 SCSS is mostly created at the component level, with global style imports for shared styles.
 
+
 ```
 src/
 │   index.html
@@ -51,6 +52,12 @@ src/
 │   
 └───styles/
     │   global.scss
+```
+
+When using Angular CLI to generate functionality, navigate to the corresponding folder first. ex:
+```bash
+cd ./src/app/components
+ng generate component dashboard
 ```
 
 ### Running unit tests
