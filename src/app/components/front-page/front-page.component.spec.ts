@@ -1,4 +1,5 @@
 import { QueryBuilderService } from './../../services/query-builder.service';
+import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FrontPageComponent } from './front-page.component';
@@ -7,6 +8,9 @@ import { SearchBarComponent } from '../search-bar/search-bar.component';
 import { SearchFiltersComponent } from '../search-filters/search-filters.component';
 import { InspectionsSearchResultsListComponent } from '../inspections-search-results-list/inspections-search-results-list.component';
 import { LoggingService } from '../../services/logging.service';
+import { InspectionDataService } from '../../services/inspection-data.service';
+import { ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
+
 
 describe('FrontPageComponent', () => {
   let component: FrontPageComponent;
@@ -21,10 +25,15 @@ describe('FrontPageComponent', () => {
         SearchFiltersComponent,
         InspectionsSearchResultsListComponent,
       ],
-      imports: [RouterTestingModule],
+      imports: [
+        RouterTestingModule,
+        HttpClientModule
+      ],
       providers: [
         QueryBuilderService,
-        LoggingService
+        LoggingService,
+        InspectionDataService,
+        ScrollToService,
       ]
     })
     .compileComponents();

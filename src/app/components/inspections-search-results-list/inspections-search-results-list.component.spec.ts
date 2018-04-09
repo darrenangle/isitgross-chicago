@@ -1,6 +1,12 @@
+import { LoggingService } from './../../services/logging.service';
+import { QueryBuilderService } from './../../services/query-builder.service';
+import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { InspectionDataService } from '../../services/inspection-data.service';
 
 import { InspectionsSearchResultsListComponent } from './inspections-search-results-list.component';
+
 
 describe('InspectionsSearchResultsListComponent', () => {
   let component: InspectionsSearchResultsListComponent;
@@ -8,7 +14,16 @@ describe('InspectionsSearchResultsListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InspectionsSearchResultsListComponent ]
+      declarations: [ InspectionsSearchResultsListComponent ],
+      imports: [
+        RouterTestingModule,
+        HttpClientModule
+      ],
+      providers: [
+        InspectionDataService,
+        QueryBuilderService,
+        LoggingService
+      ]
     })
     .compileComponents();
   }));
