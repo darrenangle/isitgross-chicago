@@ -1,5 +1,7 @@
 <div class="search-bar">
   <input #searchBox type="text" class="search-bar__input" 
       (keyup)="queryService.updateTextQuery(searchBox.value)">
-  <button class="search-bar__button">Search</button>
+  <button class="search-bar__button"
+      (click)="search()"    
+  >Search</button>
 </div>

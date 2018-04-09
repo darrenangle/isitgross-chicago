@@ -16,6 +16,9 @@ export class SearchBarComponent implements OnInit {
     private inspectionData: InspectionDataService
   ) { }
 
+  search(): void {
+    this.inspectionData.loadInspections();
+  }
 
   ngOnInit() {
   }

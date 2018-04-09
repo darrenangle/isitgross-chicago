@@ -9,15 +9,15 @@ import { Inspection } from '../../models/inspection';
 })
 export class InspectionsSearchResultsListComponent implements OnInit {
   inspections: Inspection[];
-  constructor(private inspectionData: InspectionDataService) { }
+  constructor(private inspectionDataService: InspectionDataService) { }
 
   ngOnInit() {
-    this.getInspections();
-    console.log(this.inspections);
-  }
-  getInspections(): void {
-    this.inspectionData.getInspections()
-      .subscribe(inspections => this.inspections = inspections);
+      this
+        .inspectionDataService
+        .inspectionData
+        .subscribe((inspections: Inspection[]) => {
+          this.inspections = inspections;
+        });
   }
 
 }

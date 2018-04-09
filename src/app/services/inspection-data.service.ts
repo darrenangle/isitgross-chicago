@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import {Subject} from 'rxjs/Subject';
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -19,12 +20,17 @@ export class InspectionDataService {
     private log: LoggingService,
     private http: HttpClient ) { }
 
-  getInspections(): Observable<Inspection[]> {
+  inspectionData: Subject<Inspection[]> = new BehaviorSubject<Inspection[]>([]);
+
+  loadInspections() {
     this.queryURL = this.queryService.getQuery();
-    return this.http.get<Inspection[]>(this.queryURL)
-    .pipe(
-      tap(inspections => this.log.logActivity(`fetched inspections`)),
-      catchError(this.handleError('getInspections', []) )
+    this.http.get<Inspection[]>(this.queryURL)
+    .subscribe(
+      (data: any) => {
+        this.inspectionData.next(data);
+      },
+      (err: any) => catchError(this.handleError('inspection get error', [])),
+      () => this.log.logActivity('Inspection Sub Loaded Successfuly')
     );
   }
 
