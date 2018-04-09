@@ -137,9 +137,9 @@ The Query Building Services utilies the plain text search `$q=` for text input, 
 
 This service can be injected into components and other services to retrieve or modify the current query.
 
-## Data Service
+## Inspection Data Service
 
-This services makes calls to the API endpoint and returns results. 
+This services makes calls to the City of Chicago Data API endpoint and returns results. 
 
 Service functions include: 
 1. Retreiving multiple inspections using a query built by the Query Building Service
@@ -148,7 +148,9 @@ Service functions include:
 ---
 
 ### Testing
-There is currently basic 'it should create' test coverage for all UI
+Most of the important test coverage in this build are the tests of the Query Builder Service, and the Inspection Data service. Critical functions are tested against real data.
+
+Additionally there is currently basic 'it should create' test coverage for all UI and Services.
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
