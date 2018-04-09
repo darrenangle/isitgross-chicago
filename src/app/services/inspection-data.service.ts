@@ -34,7 +34,7 @@ export class InspectionDataService {
   }
 
     getInspectionByInspectionId(id: number): Observable<Inspection> {
-     const url = this.queryService.cleanAPIUrl + '&inspection_id=' + id;
+     const url = this.queryService.cleanAPIUrl + '&inspection_id=' + id + this.queryService.token;
      this.log.logActivity('fetching single inspection with url: ' + url);
      return this.http.get<Inspection>(url).pipe(
       map(heroes => heroes[0]),

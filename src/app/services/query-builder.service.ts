@@ -7,7 +7,7 @@ export class QueryBuilderService {
   private textQuery = '';
   private resultLimit = '&$limit=100';
   private order = '&$order=inspection_date DESC';
-  private token = '&$$app_token=C2lg52I1ERs6QufBgQXiAnTRG';
+  public token = '&$$app_token=C2lg52I1ERs6QufBgQXiAnTRG';
 
   public queryFilterStates = {
     includePassingInspections: false,
