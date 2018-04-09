@@ -9,7 +9,7 @@ export class QueryBuilderService {
   private order = '&$order=inspection_date DESC';
   private token = '&$$app_token=C2lg52I1ERs6QufBgQXiAnTRG';
 
-  private queryFilterStates = {
+  public queryFilterStates = {
     includePassingInspections: false,
     includePoo: false,
     includePests: false,

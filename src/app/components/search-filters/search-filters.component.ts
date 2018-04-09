@@ -12,7 +12,7 @@ export class SearchFiltersComponent implements OnInit {
 
   constructor(
     private log: LoggingService,
-    private query: QueryBuilderService
+    public query: QueryBuilderService
   ) { }
 
   ngOnInit() {
