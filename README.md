@@ -120,16 +120,16 @@ Rules:
 
 ---
 
-## Services
+# Services
 
 This app utilizes 3 Angular services for functionality, and it's worth taking time to understand each.
 
-#### Logging Service
+## Logging Service
 
 This is, at present, a very fancy `console.log()`. It is a service written to be extended easily via a third-party or remote logger.
 Inject this service into components or other services for access to `log.logActivity()` and `log.logError()`. 
 
-#### Query Building Service
+## Query Building Service
 
 This service was written to manage and narrow the complexity involved with traversing the City of Chicago's inspection data.
 
@@ -139,7 +139,7 @@ The Query Building Services utilies the plain text search `$q=` for text input, 
 
 This service can be injected into components and other services to retrieve or modify the current query.
 
-#### Data Service
+## Data Service
 
 This services makes calls to the API endpoint and returns results. 
 
