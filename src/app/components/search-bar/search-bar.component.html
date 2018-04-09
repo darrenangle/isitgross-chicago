@@ -3,6 +3,7 @@
         type="text" 
         class="search-bar__input col-sm-9 col-xs-12" 
         (keyup)="updateSearchQuery(searchBox.value)"
+        (keyup.enter)="search()"
         placeholder="ex: taco bell"
     >
   <button class="search-bar__button btn col-sm-3 col-xs-12"
