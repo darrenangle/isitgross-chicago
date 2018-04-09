@@ -4,11 +4,13 @@
 
 An Angular 5 app that allows users to search failed food inspections.
 
-![alt text](https://github.com/darrenangle/isitgross-chicago/raw/develop/src/assets/screenshot.png "Is It Gross: Chicago Screenshot")
-
 Leverages the City of Chicago's [food inspection dataset](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5/data). 
 
-### Prerequisites
+![alt text](https://github.com/darrenangle/isitgross-chicago/raw/develop/src/assets/screenshot.png "Is It Gross: Chicago Screenshot")
+
+--
+
+## Prerequisites
 To get the app running locally, it helps to have Angular CLI and Node installed (Angular CLI: 1.7.4 Node: 9.4.0):
 
 After installing [Node](https://nodejs.org/en/), run 
@@ -16,7 +18,7 @@ After installing [Node](https://nodejs.org/en/), run
 npm install -g @angular/cli
 npm install
 ```
-### Development server
+## Development server
 
 To run a development server at http://localhost:4200 use
 ```bash
@@ -118,6 +120,34 @@ Rules:
 
 ---
 
+## Services
+
+This app utilizes 3 Angular services for functionality, and it's worth taking time to understand each.
+
+#### Logging Service
+
+This is, at present, a very fancy `console.log()`. It is a service written to be extended easily via a third-party or remote logger.
+Inject this service into components or other services for access to `log.logActivity()` and `log.logError()`. 
+
+#### Query Building Service
+
+This service was written to manage and narrow the complexity involved with traversing the City of Chicago's inspection data.
+
+Queries to this dataset are written in SocrataQL or [(SOQL)](https://dev.socrata.com/docs/queries/), need to be constructed on the fly in response to user interaction.
+
+The Query Building Services utilies the plain text search `$q=` for text input, and the `$where` clause to construct queries based on filters.
+
+This service can be injected into components and other services to retrieve or modify the current query.
+
+#### Data Service
+
+This services makes calls to the API endpoint and returns results. 
+
+Service functions include: 
+1. Retreiving multiple inspections using a query built by the Query Building Service
+2. Retrieving a single inspection by `inspection_id`
+
+--
 
 ### Running unit tests
 
