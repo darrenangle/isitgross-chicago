@@ -5,6 +5,7 @@
         (keyup)="updateSearchQuery(searchBox.value)"
         (keyup.enter)="search()"
         placeholder="ex: taco bell"
+        value="{{queryService.textQuery}}"
     >
   <button class="search-bar__button btn col-sm-3 col-xs-12"
       (click)="search()">search</button>

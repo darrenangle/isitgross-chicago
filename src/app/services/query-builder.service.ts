@@ -4,7 +4,8 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class QueryBuilderService {
   public cleanAPIUrl = 'https://data.cityofchicago.org/resource/cwig-ma7x.json?$q=';
-  private textQuery = '';
+  public textQuery = '';
+  private encodedTextQuery = '';
   private resultLimit = '&$limit=100';
   private order = '&$order=inspection_date DESC';
   public token = '&$$app_token=C2lg52I1ERs6QufBgQXiAnTRG';
@@ -27,10 +28,11 @@ export class QueryBuilderService {
 
   // Default States for query:
   private whereFilter = this.queryFilterStrings.whereFailOnly;
-  public currentQueryString = this.cleanAPIUrl + this.textQuery + this.whereFilter;
+  public currentQueryString = this.cleanAPIUrl + this.encodedTextQuery + this.whereFilter;
 
   updateTextQuery(text: string): void {
-    this.textQuery = encodeURI(text);
+    this.textQuery = text;
+    this.encodedTextQuery = encodeURI(text);
     this.buildQuery();
   }
 
@@ -42,7 +44,8 @@ export class QueryBuilderService {
 
   buildQuery(): void {
     let newQuery = '';
-    newQuery = this.cleanAPIUrl + this.textQuery;
+    
+    newQuery = this.cleanAPIUrl + this.encodedTextQuery;
     // Check WHERE filter state and add appropriate string to new Query;
     // tslint:disable-next-line
     newQuery += this.queryFilterStates.includePassingInspections ? this.queryFilterStrings.whereIncludePassing : this.queryFilterStrings.whereFailOnly;
