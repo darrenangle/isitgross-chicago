@@ -131,9 +131,7 @@ Inject this service into components or other services for access to `log.logActi
 
 ## Query Building Service
 
-This service was written to manage and narrow the complexity involved with traversing the City of Chicago's inspection data.
-
-Queries to this dataset are written in SocrataQL or [(SOQL)](https://dev.socrata.com/docs/queries/), need to be constructed on the fly in response to user interaction.
+This service was written to manage and narrow the complexity involved with traversing the City of Chicago's inspection data.Queries to this dataset are written in Socrata Query Language [(SOQL)](https://dev.socrata.com/docs/queries/), and need to be constructed on the fly in response to user interaction.
 
 The Query Building Services utilies the plain text search `$q=` for text input, and the `$where` clause to construct queries based on filters.
 
@@ -147,7 +145,7 @@ Service functions include:
 1. Retreiving multiple inspections using a query built by the Query Building Service
 2. Retrieving a single inspection by `inspection_id`
 
---
+---
 
 ### Running unit tests
 
