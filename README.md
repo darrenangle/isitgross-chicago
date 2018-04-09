@@ -64,7 +64,7 @@ ng generate component dashboard
 
 ---
 
-## Style Methodolog
+## Style Methodoloy
 This project follows the BEM (Block, Element, Modifier) methodology for element class names. SASS nesting helps a great deal. 
 
 Basic Idea:
@@ -96,7 +96,26 @@ HTML:
 ```
 
 For more on BEM, [click here.](https://en.bem.info/methodology/quick-start/)
+
 ---
+
+## Git Flow and Branching
+
+This repo utilizes the [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) a 'strict branching model' for branched feature development and production releases at scale.
+
+Rules:
+
+1. New features are branched from `develop` and follow the naming convention `feature/feature-name`
+2. Finished feature branches are merged back into `develop`
+3. After several features are finished and merged into `develop`, a release is branched from `develop`, following the naming convention `release/1.0.0`
+4. Releases are merged into `master` for production deployment, and release patching
+5. Hotfixes for production bugs are branched from `master` and merged immediately
+
+[Read more on Gitflow here.](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+
+
+---
+
 
 ### Running unit tests
 
