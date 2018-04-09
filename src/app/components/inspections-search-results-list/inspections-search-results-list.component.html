@@ -8,7 +8,7 @@
         <div>
           <h3 class="inspection-search-results__result__title">{{ inspection.dba_name }}</h3>
           <h4 class="inspection-search-results__result__address">{{ inspection.address }}</h4>
-          <p class="inspection-search-results__result__date">Inspection Date: {{ inspection.inspection_date }}</p>
+          <p class="inspection-search-results__result__date">Inspection Date: {{ inspection.inspection_date | date }}</p>
           <p class="inspection-search-results__result__result">Result: {{ inspection.results }}</p>
         </div>
       </a>

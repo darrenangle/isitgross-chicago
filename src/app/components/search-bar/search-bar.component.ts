@@ -20,6 +20,10 @@ export class SearchBarComponent implements OnInit {
     this.inspectionData.loadInspections();
   }
 
+  updateSearchQuery(query: string): void {
+    this.queryService.updateTextQuery(query);
+  }
+
   ngOnInit() {
   }
 

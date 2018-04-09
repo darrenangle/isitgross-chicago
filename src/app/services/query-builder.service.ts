@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class QueryBuilderService {
-  private cleanAPIUrl = 'https://data.cityofchicago.org/resource/cwig-ma7x.json?$q=';
+  public cleanAPIUrl = 'https://data.cityofchicago.org/resource/cwig-ma7x.json?$q=';
   private textQuery = '';
   private resultLimit = '&$limit=100';
 

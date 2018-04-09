@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {Subject} from 'rxjs/Subject';
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+import { Subject } from 'rxjs/Subject';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -13,8 +13,7 @@ import { LoggingService } from './logging.service';
 
 @Injectable()
 export class InspectionDataService {
-  private queryURL = 'https://data.cityofchicago.org/resource/cwig-ma7x.json?$q=&$where=(results=%27Fail%27)&$limit=100';
-
+  private queryURL = '';
   constructor(
     private queryService: QueryBuilderService,
     private log: LoggingService,
@@ -34,6 +33,15 @@ export class InspectionDataService {
     );
   }
 
+    getInspectionByInspectionId(id: number): Observable<Inspection> {
+     const url = this.queryService.cleanAPIUrl + '&inspection_id=' + id;
+     this.log.logActivity('fetching single inspection with url: ' + url);
+     return this.http.get<Inspection>(url).pipe(
+      map(heroes => heroes[0]),
+      tap(_ => this.log.logActivity(`fetched inspection_id=${id}`)),
+      catchError(this.handleError<Inspection>(`getInspectionByInspectionId inspection_id=${id}`))
+     );
+    }
 
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

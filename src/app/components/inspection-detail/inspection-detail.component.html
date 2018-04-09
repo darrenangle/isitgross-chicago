@@ -1,3 +1,9 @@
-<p>
-  inspection-detail works!
-</p>
+<div *ngIf="inspection" class="inspection-detail">
+    <span class="inspection-detail__back-button" (click)="goBack()">x</span>
+    <h1>{{inspection.dba_name}}</h1>
+    <h2>Inspection Date: {{inspection.inspection_date | date}} </h2>
+    <h2>Result: {{inspection.results}}</h2>
+    <p class="inspection-search-results__result">Violation Notes:</p>
+    <p *ngFor="let violation of violations">{{ violation }}</p>
+</div>
+

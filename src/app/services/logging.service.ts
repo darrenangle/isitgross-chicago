@@ -9,7 +9,7 @@ export class LoggingService {
 
   // General Activity Logging
   logActivity (activity: string) {
-    this.activityLog.push(activity);
+    // this.activityLog.push(activity);
     console.log('[App Activity]: ' + activity);
   }
 
@@ -19,7 +19,7 @@ export class LoggingService {
 
   // Error Logging
   logError(error: string) {
-    this.errorLog.push(error);
+    // this.errorLog.push(error);
     console.log('[Error]: ' + error);
   }
 
