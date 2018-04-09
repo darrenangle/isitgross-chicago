@@ -16,7 +16,7 @@ export class QueryBuilderService {
 
   private queryFilterStrings = {
     whereFailOnly: '&$where=(results=%27Fail%27)',
-    whereIncludePassing: '&$where=(results=%27Fail%27%20OR%20results=%27Pass%27%20OR%20results=%27Pass%20w/%20Conditions%27)',
+    whereIncludePassing: '&$where=(results=%27Pass%27%20OR%20results=%27Pass%20w/%20Conditions%27)',
     andIncludePoo: '%20AND%20(violations%20like%20%27%25DROPPINGS%25%27%20OR%20violations%20like%20%27%25FECES%25%27)',
     // tslint:disable-next-line
     andIncludePests: '%20AND%20(violations%20like%20%27%25RAT%25%27%20OR%20violations%20like%20%27%25MICE%25%27%20OR%20violations%20like%20%27%25RODENT%25%27%20OR%20violations%20like%20%27%25INSECTS%25%27)',

@@ -1,7 +1,34 @@
 .inspection-detail {
-
+    background-color: #f8f8f8;
+    padding: 20px;
+    padding-bottom: 50px;
+    padding-top: 0px;
+    
     &__back-button {
-        font-size: 24px;
+        font-size: 40px;
+        min-height: 25px;
+        min-width: 25px;
         cursor: pointer;
+        margin-bottom: 25px;
+        &:hover {
+            color: #33d9b2;
+        }
+    }
+
+    &__violation-header {
+        margin-top: 25px;
+    }
+    &__result-word {
+        color: #980000;
+            &--pass{
+                color: #33d9b2;
+            }
+    }
+    &__violation {
+        padding: 20px;
+        background-color: #d1ccc0;
+        &:nth-child(even){
+            background-color: #dedede;
+        }
     }
 }

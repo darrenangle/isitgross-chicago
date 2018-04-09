@@ -1,15 +1,16 @@
 <div *ngIf="inspections.length > 0" class='inspection-search-results'>
   <div class="inspection-search-results__header">
     <h2>Search Results:</h2>
+    <p>(click result for more info)</p>
   </div>
   <ul class="inspection-search-results__results-wrapper">
-    <li *ngFor="let inspection of inspections" class="inspection-search-results__result">
+    <li *ngFor="let inspection of inspections" class="inspection-search-results__result container">
       <a routerLink="/inspection/{{inspection.inspection_id}}">
         <div>
           <h3 class="inspection-search-results__result__title">{{ inspection.dba_name }}</h3>
           <h4 class="inspection-search-results__result__address">{{ inspection.address }}</h4>
           <p class="inspection-search-results__result__date">Inspection Date: {{ inspection.inspection_date | date }}</p>
-          <p class="inspection-search-results__result__result">Result: {{ inspection.results }}</p>
+          <p class="inspection-search-results__result__result">Result: <span class="result-word" [class.result-word--pass]="inspection.results!=='Fail'">{{ inspection.results }}</span></p>
         </div>
       </a>
     </li>

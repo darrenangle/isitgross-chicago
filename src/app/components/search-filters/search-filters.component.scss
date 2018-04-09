@@ -2,7 +2,7 @@
     color: #f7f1e3;
 }
 .search-filters {
-
+    margin-bottom: 50px;
 
     &__filter {
         background-color: #40407a;
@@ -11,9 +11,12 @@
         }
         color: #b9b9b9;
         cursor: pointer;
-        min-height: 50px;
-        padding: 20px;
+        min-height: 30px;
+        padding-top: 20px;
         text-align: center;
+        @media only screen and (max-width: 400px) {
+            min-height: 20px;
+        }
 
         &--active {
             color: rgb(27, 27, 27);
@@ -28,6 +31,7 @@
         }
         &__emoji {
             font-size: 3em;
+            line-height: 1em;
             @media only screen and (max-width: 400px) {
                 font-size: 2em;
             }

@@ -1,9 +1,10 @@
-<div *ngIf="inspection" class="inspection-detail">
-    <span class="inspection-detail__back-button" (click)="goBack()">x</span>
+<div *ngIf="inspection" class="inspection-detail container">
+    <div class="inspection-detail__back-button" (click)="goBack()">x</div>
     <h1>{{inspection.dba_name}}</h1>
+    <h4>Address: <a href="https://maps.google.com/?q={{inspection.dba_name}} {{inspection.address}} {{inspection.city}}" target="_blank">{{inspection.address}}</a></h4>
     <h2>Inspection Date: {{inspection.inspection_date | date}} </h2>
-    <h2>Result: {{inspection.results}}</h2>
-    <p class="inspection-search-results__result">Violation Notes:</p>
-    <p *ngFor="let violation of violations">{{ violation }}</p>
+    <h2>Result: <span class="inspection-detail__result-word" [class.inspection-detail__result-word--pass]="inspection.results!=='Fail'">{{ inspection.results }}</span></h2>
+    <h3 class="inspection-detail__violation-header">Violations & Corrections:</h3>
+    <p *ngFor="let violation of violations" class="inspection-detail__violation">{{ violation }}</p>
 </div>
 
