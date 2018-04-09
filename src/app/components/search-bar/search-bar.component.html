@@ -1,7 +1,11 @@
-<div class="search-bar">
-  <input #searchBox type="text" class="search-bar__input" 
-      (keyup)="updateSearchQuery(searchBox.value)">
-  <button class="search-bar__button"
+<div class="search-bar row">
+  <input #searchBox 
+        type="text" 
+        class="search-bar__input col-sm-9 col-xs-12" 
+        (keyup)="updateSearchQuery(searchBox.value)"
+        placeholder="ex: taco bell"
+    >
+  <button class="search-bar__button btn col-sm-3 col-xs-12"
       (click)="search()"    
-  >Search</button>
+  >search</button>
 </div>

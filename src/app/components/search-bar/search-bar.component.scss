@@ -1,0 +1,25 @@
+.search-bar {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    &__input {
+        border: none;
+        height: 100px;
+        text-align: center;
+        font-size: 2em;
+        background-color: #f7f1e3;
+    }
+    &__button {
+        border-radius: 0;
+        height: 100px;
+        background-color: #cc8e35;
+        color: white;
+        font-family: 'Roboto Condensed', sans-serif;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 2em;
+        &:hover {
+            background-color: #ff793f;
+        }
+    }
+}
