@@ -27,7 +27,7 @@ export class QueryBuilderService {
 
   // Default States for query:
   private whereFilter = this.queryFilterStrings.whereFailOnly;
-  private currentQueryString = this.cleanAPIUrl + this.textQuery + this.whereFilter;
+  public currentQueryString = this.cleanAPIUrl + this.textQuery + this.whereFilter;
 
   updateTextQuery(text: string): void {
     this.textQuery = encodeURI(text);
