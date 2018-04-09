@@ -11,7 +11,9 @@ To get the app running locally, it helps to have Angular CLI and Node installed 
 
 After installing [Node](https://nodejs.org/en/), run 
 
-### `npm install -g @angular/cli`
+```bash
+npm install -g @angular/cli
+```
 
 
 
