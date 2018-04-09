@@ -22,7 +22,7 @@ ng serve
 ```
 
 ### Application Structure
-This app follows a mostly typical Angular app structure, with folder seperation. 
+This app follows a mostly typical Angular app structure, grouped by function into folders under `./src/.` 
 SCSS is mostly created at the component level, with global style imports for shared styles.
 
 
@@ -59,6 +59,39 @@ When using Angular CLI to generate functionality, navigate to the corresponding 
 cd ./src/app/components
 ng generate component dashboard
 ```
+
+### SASS Approach
+This project follows the BEM (Block, Element, Modifier) methodology for element class names. SASS nesting helps a great deal. 
+Basic Idea
+```css
+.block {} 
+.block__element {} 
+.block--modifier {} 
+.block__element--modifier {} 
+```
+SASS Example
+```scss
+.block {
+    &__element {
+        &--modifier {
+
+        }
+    }
+    &--modifier {
+
+    } 
+} 
+```
+HTML
+```html
+<div class="block block--modifier">
+    <div class="block__element"></div>
+    <div class="block__element block__element--modifer"></div>
+</div>
+```
+
+
+For more on BEM, [click here](https://en.bem.info/methodology/quick-start/)
 
 ### Running unit tests
 
