@@ -154,5 +154,10 @@ Additionally there is currently basic 'it should create' test coverage for all U
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
+---
+
+### Deployment
+Currently using [angular-cli-ghpages](https://github.com/angular-schule/angular-cli-ghpages) for deployment to Github Pages
+
 
 
