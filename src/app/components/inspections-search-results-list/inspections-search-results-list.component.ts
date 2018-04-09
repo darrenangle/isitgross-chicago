@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { InspectionDataService } from './../../services/inspection-data.service';
+import { Inspection } from '../../models/inspection';
 
 @Component({
   selector: 'app-inspections-search-results-list',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./inspections-search-results-list.component.scss']
 })
 export class InspectionsSearchResultsListComponent implements OnInit {
-
-  constructor() { }
+  inspections: Inspection[];
+  constructor(private inspectionData: InspectionDataService) { }
 
   ngOnInit() {
+    this.getInspections();
+    console.log(this.inspections);
+  }
+  getInspections(): void {
+    this.inspectionData.getInspections()
+      .subscribe(inspections => this.inspections = inspections);
   }
 
 }

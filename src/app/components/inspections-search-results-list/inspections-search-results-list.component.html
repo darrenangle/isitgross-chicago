@@ -1,3 +1,10 @@
-<p>
-  inspections-search-results-list works!
-</p>
+<div class='inspection-search-results'>
+  <div class="inspection-search-results__header">
+    <h2>Search Results:</h2>
+  </div>
+  <ul class="inspection-search-results__results-wrapper">
+    <li *ngFor="let inspection of inspections" class="inspection-search-results__result">
+      <h3>{{inspection.dba_name}}</h3>
+    </li>
+  </ul>
+</div>

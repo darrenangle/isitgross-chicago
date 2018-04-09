@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QueryBuilderService } from './../../services/query-builder.service';
+import { InspectionDataService } from './../../services/inspection-data.service';
+
 
 
 @Component({
@@ -9,7 +11,11 @@ import { QueryBuilderService } from './../../services/query-builder.service';
 })
 export class SearchBarComponent implements OnInit {
 
-  constructor(private queryService: QueryBuilderService) { }
+  constructor(
+    private queryService: QueryBuilderService,
+    private inspectionData: InspectionDataService
+  ) { }
+
 
   ngOnInit() {
   }
