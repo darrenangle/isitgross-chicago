@@ -27,7 +27,7 @@ describe('InspectionDataService', () => {
 
   it('loadInspections should create 1000 inspections', inject([InspectionDataService], (service: InspectionDataService) => {
     service.loadInspections();
-    expect(service.inspectionData._value.length === 1000;
+    expect(service.inspectionData._value.length === 1000);
   }));
   it('inspection by id exists', inject([InspectionDataService], (service: InspectionDataService) => {
     const inspection = service.getInspectionByInspectionId(579837);
