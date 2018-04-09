@@ -1,6 +1,6 @@
 # Is It Gross: Chicago
 
-### [darrenangle.com/isitgross-chicago](http://darrenangle.com/isitgross-chicago)
+### [Demo: https://darrenangle.com/isitgross-chicago](http://darrenangle.com/isitgross-chicago)
 
 An Angular 5 app that allows users to search failed food inspections.
 
@@ -12,12 +12,45 @@ To get the app running locally, it helps to have Angular CLI and Node installed 
 After installing [Node](https://nodejs.org/en/), run 
 ```bash
 npm install -g @angular/cli
+npm install
 ```
 ### Development server
 
 To run a development server at http://localhost:4200 use
 ```bash
 ng serve
+```
+
+### Application Structure
+This app follows a mostly typical Angular app structure, with folder seperation. 
+SCSS is mostly created at the component level, with global style imports for shared styles.
+
+```
+src/
+│   index.html
+│   styles.scss  
+│
+└───app/
+│   │   app.component.ts
+│   │   app.module.ts
+│   │
+│   └───app-router/
+│   │     │   model.ts
+│   │
+│   └───components/
+│   │    └───single-component/
+│   │        │   component.html
+│   │        │   component.scss
+│   │        │   component.ts
+│   │           
+│   └───models/
+│   │   │   model.ts
+│   └───services/
+│       │   service.ts
+│   
+│   
+└───styles/
+    │   global.scss
 ```
 
 ### Running unit tests
