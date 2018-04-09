@@ -13,7 +13,7 @@ import { ScrollToService, ScrollToConfigOptions } from '@nicky-lenaers/ngx-scrol
 export class SearchBarComponent implements OnInit {
 
   constructor(
-    private queryService: QueryBuilderService,
+    public queryService: QueryBuilderService,
     private inspectionData: InspectionDataService,
     private _scrollToService: ScrollToService
   ) { }

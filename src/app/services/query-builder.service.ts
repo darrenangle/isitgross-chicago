@@ -44,7 +44,6 @@ export class QueryBuilderService {
 
   buildQuery(): void {
     let newQuery = '';
-    
     newQuery = this.cleanAPIUrl + this.encodedTextQuery;
     // Check WHERE filter state and add appropriate string to new Query;
     // tslint:disable-next-line
