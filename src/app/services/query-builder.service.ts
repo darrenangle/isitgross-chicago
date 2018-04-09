@@ -7,6 +7,7 @@ export class QueryBuilderService {
   private textQuery = '';
   private resultLimit = '&$limit=100';
   private order = '&$order=inspection_date DESC';
+  private token = '&$$app_token=C2lg52I1ERs6QufBgQXiAnTRG';
 
   private queryFilterStates = {
     includePassingInspections: false,
@@ -56,7 +57,7 @@ export class QueryBuilderService {
     newQuery += this.queryFilterStates.includePoisons ? this.queryFilterStrings.andIncludePoison : '';
 
     // Add limit to new query and finish build
-    this.currentQueryString = newQuery + this.resultLimit + this.order;
+    this.currentQueryString = newQuery + this.resultLimit + this.order + this.token;
     this.log.logActivity('Current Query: ' + this.currentQueryString );
   }
 
