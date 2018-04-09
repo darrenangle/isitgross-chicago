@@ -147,7 +147,8 @@ Service functions include:
 
 ---
 
-### Running unit tests
+### Testing
+There is currently basic 'it should create' test coverage for all UI
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 

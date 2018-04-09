@@ -18,7 +18,7 @@ describe('InspectionDetailComponent', () => {
   let fixture: ComponentFixture<InspectionDetailComponent>;
 
   const fakeActivatedRoute = {
-    snapshot: { paramMap: convertToParamMap({id: 1123}) }
+    snapshot: { paramMap: convertToParamMap({id: 579837}) }
   };
 
   beforeEach (async (() => {

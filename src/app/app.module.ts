@@ -11,7 +11,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { SearchFiltersComponent } from './components/search-filters/search-filters.component';
-import { SearchQueryNotesComponent } from './components/search-query-notes/search-query-notes.component';
 import { InspectionDetailComponent } from './components/inspection-detail/inspection-detail.component';
 import { AppRouterModule } from './app-router/app-router.module';
 import { FrontPageComponent } from './components/front-page/front-page.component';
@@ -25,7 +24,6 @@ import { InspectionsSearchResultsListComponent } from './components/inspections-
     HeaderComponent,
     SearchBarComponent,
     SearchFiltersComponent,
-    SearchQueryNotesComponent,
     InspectionDetailComponent,
     FrontPageComponent,
     InspectionsSearchResultsListComponent,
