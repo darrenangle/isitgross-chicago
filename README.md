@@ -4,6 +4,8 @@
 
 An Angular 5 app that allows users to search failed food inspections.
 
+![alt text](https://github.com/darrenangle/isitgross-chicago/raw/develop/src/assets/screenshot.png "Is It Gross: Chicago Screenshot")
+
 Leverages the City of Chicago's [food inspection dataset](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5/data). 
 
 ### Prerequisites
@@ -24,7 +26,7 @@ ng serve
 ---
 
 ## Application Structure
-This app follows a mostly typical Angular app structure, grouped by function into folders under `./src/.` 
+This app follows a mostly typical Angular app structure, grouped by function into folders under `./src/` 
 SCSS is mostly created at the component level, with global style imports for shared styles.
 
 
@@ -99,9 +101,9 @@ For more on BEM, [click here.](https://en.bem.info/methodology/quick-start/)
 
 ---
 
-## Git Flow and Branching
+## Git, Gitflow, and Branching
 
-This repo utilizes the [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) a 'strict branching model' for branched feature development and production releases at scale.
+This repo utilizes the [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow), a 'strict branching model' for branched feature development and production releases at scale.
 
 Rules:
 
