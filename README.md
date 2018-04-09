@@ -21,7 +21,9 @@ To run a development server at http://localhost:4200 use
 ng serve
 ```
 
-### Application Structure
+---
+
+## Application Structure
 This app follows a mostly typical Angular app structure, grouped by function into folders under `./src/.` 
 SCSS is mostly created at the component level, with global style imports for shared styles.
 
@@ -60,16 +62,19 @@ cd ./src/app/components
 ng generate component dashboard
 ```
 
-### SASS Approach
+---
+
+## Style Methodolog
 This project follows the BEM (Block, Element, Modifier) methodology for element class names. SASS nesting helps a great deal. 
-Basic Idea
+
+Basic Idea:
 ```css
 .block {} 
 .block__element {} 
 .block--modifier {} 
 .block__element--modifier {} 
 ```
-SASS Example
+SASS Nesting Example:
 ```scss
 .block {
     &__element {
@@ -82,7 +87,7 @@ SASS Example
     } 
 } 
 ```
-HTML
+HTML:
 ```html
 <div class="block block--modifier">
     <div class="block__element"></div>
@@ -90,8 +95,8 @@ HTML
 </div>
 ```
 
-
-For more on BEM, [click here](https://en.bem.info/methodology/quick-start/)
+For more on BEM, [click here.](https://en.bem.info/methodology/quick-start/)
+---
 
 ### Running unit tests
 
